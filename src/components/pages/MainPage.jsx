@@ -33,13 +33,13 @@ export function MainPage() {
             <div>
                 <Header />
                 <div className="Menu">
-                    <NavLink className="MenuItems" to="">HOME</NavLink>
-                    <NavLink className="MenuItems" to="shop">SHOP</NavLink>
-                    <NavLink className="MenuItems" to="favorite">FAVORITE</NavLink>
-                    <NavLink className="MenuItems" to="cart">CART</NavLink>
+                    <NavLink className="MenuItems" to="/">HOME</NavLink>
+                    <NavLink className="MenuItems" to="/shop">SHOP</NavLink>
+                    <NavLink className="MenuItems" to="/favorite">FAVORITE</NavLink>
+                    <NavLink className="MenuItems" to="/cart">CART</NavLink>
                 </div>
                 <Switch>
-                    <Route exact path="" >
+                    <Route exact path="/" >
                         <HomePage
                             products={products}
                             modalProductId={modalProductId}
@@ -48,7 +48,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route exact path="shop">
+                    <Route path="/shop">
                         <ShopPage
                             products={products}
                             modalProductId={modalProductId}
@@ -57,7 +57,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route exact path="favorite">
+                    <Route path="/favorite">
                         <FavoritePage
                             products={products}
                             setModalProductId={setModalProductId}
@@ -66,7 +66,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route exact path="cart">
+                    <Route path="/cart">
                         <CartPage
                             products={products}
                         />
