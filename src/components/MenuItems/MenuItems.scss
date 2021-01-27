@@ -1,0 +1,22 @@
+.MenuItems {
+    color: #616161;
+    margin: 0 20px;
+    display: inline-block;
+    position: relative;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+
+    &::after {
+        color: #6600ff;
+        width: 0;
+        height: 3px;
+        content: '';
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        transition: 0.5s;
+        border-bottom: 1px solid #6600ff;
+    }
+}
