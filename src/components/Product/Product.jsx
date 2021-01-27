@@ -6,14 +6,17 @@ import { FavoriteButton } from '../FavoriteButton/FavoriteButton';
 import { toggleFavorite, isFavorite } from "../utils/favorite";
 import { EMPTY_HEART, FULL_HEART } from '../utils/ico';
 
-export const Product = ({ product, onAddToCart }) => {
+export const Product = ({ product, onAddToCart, favoriteListCallback }) => {
 
   const [colorSvg, setColorSvg] = useState(() => isFavorite(product.id) ? FULL_HEART : EMPTY_HEART);
-
 
   const handleFavorite = (productId) => {
     toggleFavorite(productId);
     isFavorite(productId) ? setColorSvg(FULL_HEART) : setColorSvg(EMPTY_HEART);
+
+    if (typeof favoriteListCallback == 'function') {
+      favoriteListCallback()
+    }
   }
 
   return (
@@ -70,8 +73,8 @@ export const Product = ({ product, onAddToCart }) => {
   )
 }
 
-
 Product.propTypes = {
   product: PropTypes.object,
   onAddToCart: PropTypes.func,
+  favoriteListCallback: PropTypes.func
 }

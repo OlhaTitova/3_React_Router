@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ModalBase } from '../ModalBase/ModalBase';
 
 export const ModalDeleteCart = ({ onClose, onConfirm }) => {
@@ -16,4 +17,9 @@ export const ModalDeleteCart = ({ onClose, onConfirm }) => {
             onConfirm={onConfirm}
         />
     )
+}
+
+ModalDeleteCart.propTypes = {
+    onClose: PropTypes.func,
+    onConfirm: PropTypes.func
 }

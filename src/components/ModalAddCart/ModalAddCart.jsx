@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import { ModalBase } from '../ModalBase/ModalBase';
 import "../common/common.scss";
 
@@ -18,4 +19,9 @@ export const ModalAddCart = ({ onClose, onConfirm }) => {
       onConfirm={onConfirm}
     />
   )
+}
+
+ModalAddCart.propTypes = {
+  onClose: PropTypes.func,
+  onConfirm: PropTypes.func
 }

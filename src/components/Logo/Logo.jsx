@@ -5,7 +5,7 @@ import './Logo.scss';
 export const Logo = () => {
     return (
         <img className="Logo"
-            src="/img/logo.jpg"
+            src="img/logo.jpg"
             alt="Print on balls"
         />
     )

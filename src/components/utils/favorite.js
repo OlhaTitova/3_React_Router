@@ -1,4 +1,3 @@
-
 export function toggleFavorite(itemId) {
 
     const favorite = JSON.parse(localStorage.getItem('favoriteList')) || [];
@@ -11,14 +10,14 @@ export function toggleFavorite(itemId) {
     localStorage.setItem('favoriteList', JSON.stringify(favorite))
 }
 
+
 export function isFavorite(itemId) {
 
     const favorite = JSON.parse(localStorage.getItem('favoriteList')) || [];
-
     return favorite.indexOf(itemId) > -1;
 }
 
+
 export function getProductFavorite() {
-    const favorite = JSON.parse(localStorage.getItem('favoriteList')) || [];
-    return favorite;
+    return JSON.parse(localStorage.getItem('favoriteList')) || [];
 }

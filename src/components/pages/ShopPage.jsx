@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { ProductList } from "../ProductList/ProductList";
 
 
@@ -18,4 +19,13 @@ export const ShopPage = ({ products, setModalProductId, modalProductId, handleMo
             </div>
         </div>
     )
+}
+
+
+ShopPage.propTypes = {
+    product: PropTypes.object,
+    setModalProductId: PropTypes.func,
+    modalProductId: PropTypes.string,
+    handleModalClose: PropTypes.func,
+    handleModalConfirm: PropTypes.func
 }

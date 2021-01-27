@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import '../Product/Product.scss'
 import { Button } from "../Button/Button";
+import '../Product/Product.scss'
 import './CartItem.scss'
 
 
 export const CartItem = ({ product, count, onRemoveWithCart }) => {
-
 
     return (
         <div>
@@ -56,7 +55,6 @@ export const CartItem = ({ product, count, onRemoveWithCart }) => {
             </Button>
                 </div>
             </div>
-            <hr />
         </ div >
     )
 }
@@ -64,5 +62,5 @@ export const CartItem = ({ product, count, onRemoveWithCart }) => {
 CartItem.propTypes = {
     product: PropTypes.object,
     handelModalConfirm: PropTypes.func,
-    count: PropTypes.string
+    count: PropTypes.number
 }

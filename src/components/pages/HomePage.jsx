@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { ProductList } from '../ProductList/ProductList';
 import { ContainerMaxWidth } from '../ContainerMaxWidth/ContainerMaxWidth';
 
 
-export function HomePage({ products, setModalProductId, modalProductId, handleModalClose, handleModalConfirm }) {
+export const HomePage = ({ products, setModalProductId, modalProductId, handleModalClose, handleModalConfirm }) => {
     return (
         <div>
             <ContainerMaxWidth />
@@ -18,4 +19,13 @@ export function HomePage({ products, setModalProductId, modalProductId, handleMo
             </div>
         </div>
     );
+}
+
+
+HomePage.propTypes = {
+    product: PropTypes.object,
+    setModalProductId: PropTypes.func,
+    modalProductId: PropTypes.string,
+    handleModalClose: PropTypes.func,
+    handleModalConfirm: PropTypes.func
 }

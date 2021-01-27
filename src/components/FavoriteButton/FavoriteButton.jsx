@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "./FavoriteButton.scss";
 
 export const FavoriteButton = ({ width, height, fill, viewBox, xmlns, d, onClick }) => {
 

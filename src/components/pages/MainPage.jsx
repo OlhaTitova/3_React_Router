@@ -5,7 +5,7 @@ import { FavoritePage } from './FavoritePage';
 import { ShopPage } from './ShopPage';
 import { HomePage } from './HomePage';
 import { addToCart } from "../utils/cart";
-import Header from "../Header/Header";
+import { Header } from "../Header/Header";
 
 
 export function MainPage() {
@@ -42,24 +42,28 @@ export function MainPage() {
                     <Route exact path="/" >
                         <HomePage
                             products={products}
-                            handleModalConfirm={handleModalConfirm}
-                            setModalProductId={setModalProductId}
                             modalProductId={modalProductId}
+                            setModalProductId={setModalProductId}
+                            handleModalConfirm={handleModalConfirm}
                             handleModalClose={handleModalClose}
                         />
                     </Route>
                     <Route path="/shop">
                         <ShopPage
                             products={products}
-                            handleModalConfirm={handleModalConfirm}
-                            setModalProductId={setModalProductId}
                             modalProductId={modalProductId}
+                            setModalProductId={setModalProductId}
+                            handleModalConfirm={handleModalConfirm}
                             handleModalClose={handleModalClose}
                         />
                     </Route>
                     <Route path="/favorite">
                         <FavoritePage
                             products={products}
+                            setModalProductId={setModalProductId}
+                            modalProductId={modalProductId}
+                            handleModalConfirm={handleModalConfirm}
+                            handleModalClose={handleModalClose}
                         />
                     </Route>
                     <Route path="/cart">

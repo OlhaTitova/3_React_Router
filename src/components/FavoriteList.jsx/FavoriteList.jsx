@@ -1,37 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { ModalAddCart } from '../ModalAddCart/ModalAddCart';
 import { Product } from '../Product/Product';
 import { getProductFavorite } from '../utils/favorite';
-// import './ProductList/ProductList.scss';
+import '../ProductList/ProductList.scss';
 
+export const FavoriteList = ({ products, setModalProductId, modalProductId, handleModalClose, handleModalConfirm }) => {
 
+    const [list, setList] = useState(getProductFavorite());
 
-export const FavoriteList = ({ products }) => {
+    products = products.filter(product => list.find(item => item === product.id));
 
-
-    // const favoriteList = products.forEach(product => {
-
-    //     const favoriteListId = getProductFavorite();
-
-    //     favoriteListId.map(itemId =>
-
-    //         <Product
-    //             key={() => (itemId === product.id) ? product.id : product.id}
-    //             product={product}
-
-    //         />
-    //     )
-    // }
-
-    // )
+    const handleFavoriteList = () => setList(getProductFavorite());
 
     return (
-        <div className="ProductList ">
+        <div className="ProductList">
 
-            {/* {getProductFavorite &&
-                // favoriteList
-            } */}
+            {products.length > 0 &&
 
-            {getProductFavorite &&
+                products.map(product =>
+                    <Product
+                        key={product.id}
+                        product={product}
+                        onAddToCart={() => setModalProductId(product.id)}
+                        favoriteListCallback={handleFavoriteList}
+                    />
+                )
+            }
+
+            {products.length === 0 &&
                 <div
                     className="row align-items-center justify-content-center"
                 >
@@ -41,6 +38,21 @@ export const FavoriteList = ({ products }) => {
                     </p>
                 </div>
             }
+
+            {modalProductId &&
+                <ModalAddCart
+                    onConfirm={handleModalConfirm}
+                    onClose={handleModalClose}
+                />
+            }
         </div>
-    )
+    );
+}
+
+FavoriteList.propTypes = {
+    product: PropTypes.object,
+    setModalProductId: PropTypes.func,
+    modalProductId: PropTypes.string,
+    handleModalClose: PropTypes.func,
+    handleModalConfirm: PropTypes.func
 }
