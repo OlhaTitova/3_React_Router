@@ -33,13 +33,13 @@ export function MainPage() {
             <div>
                 <Header />
                 <div className="Menu">
-                    <NavLink className="MenuItems" to="/">HOME</NavLink>
+                    {/* <NavLink className="MenuItems" to="/">HOME</NavLink> */}
                     <NavLink className="MenuItems" to="/shop">SHOP</NavLink>
                     <NavLink className="MenuItems" to="/favorite">FAVORITE</NavLink>
                     <NavLink className="MenuItems" to="/cart">CART</NavLink>
                 </div>
                 <Switch>
-                    <Route exact path="/" >
+                    {/* <Route exact path="/" >
                         <HomePage
                             products={products}
                             modalProductId={modalProductId}
@@ -47,7 +47,7 @@ export function MainPage() {
                             handleModalConfirm={handleModalConfirm}
                             handleModalClose={handleModalClose}
                         />
-                    </Route>
+                    </Route> */}
                     <Route path="/shop">
                         <ShopPage
                             products={products}
