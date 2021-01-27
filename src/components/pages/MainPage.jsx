@@ -39,7 +39,7 @@ export function MainPage() {
                     <NavLink className="MenuItems" to="cart">CART</NavLink>
                 </div>
                 <Switch>
-                    <Route exact path="/" >
+                    <Route exact path="" >
                         <HomePage
                             products={products}
                             modalProductId={modalProductId}
@@ -48,7 +48,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route path="/shop">
+                    <Route path="shop">
                         <ShopPage
                             products={products}
                             modalProductId={modalProductId}
@@ -57,7 +57,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route path="/favorite">
+                    <Route path="favorite">
                         <FavoritePage
                             products={products}
                             setModalProductId={setModalProductId}
@@ -66,7 +66,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route path="/cart">
+                    <Route path="cart">
                         <CartPage
                             products={products}
                         />
