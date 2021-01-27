@@ -48,7 +48,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route path="shop">
+                    <Route exact path="shop">
                         <ShopPage
                             products={products}
                             modalProductId={modalProductId}
@@ -57,7 +57,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route path="favorite">
+                    <Route exact path="favorite">
                         <FavoritePage
                             products={products}
                             setModalProductId={setModalProductId}
@@ -66,7 +66,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route path="cart">
+                    <Route exact path="cart">
                         <CartPage
                             products={products}
                         />
