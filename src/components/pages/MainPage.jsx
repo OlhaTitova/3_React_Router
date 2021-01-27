@@ -34,7 +34,7 @@ export function MainPage() {
                 <Header />
                 <div className="Menu">
                     <NavLink className="MenuItems" to="home">HOME</NavLink>
-                    <NavLink className="MenuItems" to="shop">SHOP</NavLink>
+                    <NavLink className="MenuItems" to="">SHOP</NavLink>
                     <NavLink className="MenuItems" to="favorite">FAVORITE</NavLink>
                     <NavLink className="MenuItems" to="cart">CART</NavLink>
                 </div>
@@ -48,7 +48,7 @@ export function MainPage() {
                             handleModalClose={handleModalClose}
                         />
                     </Route>
-                    <Route path="shop">
+                    <Route path="">
                         <ShopPage
                             products={products}
                             modalProductId={modalProductId}
